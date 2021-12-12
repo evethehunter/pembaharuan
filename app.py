@@ -96,4 +96,5 @@ def profil():
         return render_template("profil.html", data1 = data)
     data = db.collection("mahasiswa").document(session['userid']).get().to_dict()
     return render_template("profil.html", data1 = data)
-app.run(debug=True)
+if__name__=='_main_'
+    app.run(debug=True)
