@@ -1,0 +1,74 @@
+{% extends "navbar.html" %}
+
+{% block content%}
+    <div class="container mt-4">
+
+        <table class="table table-striped table-hover">
+            <thead>
+                <th>Nama</th>
+                <th>Nilai</th>
+                <th>Status
+                    
+                </th>
+                <th>Aksi</th>
+            </thead>
+            <tbody>
+                {% for x in mhs%}
+                <tr>
+                    <td>{{x.nama}}</td>
+                    <td>{{x.nilai}}</td>
+
+                    <td> 
+                        
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            </button>
+
+                    </td>
+                </tr>
+                
+                
+                {% endfor%}
+            </tbody>
+        </table>
+    </div>
+    <!-- Button trigger modal -->
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <input type="text" value="{{mhs[0].data}}" name="" id="">
+          <input type="text" placeholder="Username" class="form-control" value="{{mhs[0].nama}}" name="nama" id="exampleInputEmail1" aria-describedby="emailHelp">
+              
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+    {% endblock %}
+  <!-- Button trigger modal -->
+{% block script%} 
+<script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous">
+</script>
+<script>
+    function show_modal(user_id){
+        $.ajjax("/api/mhs/"+user_id,{
+            success:function(data){
+                $("#respon").text(data);
+            }
+        })
+        var myModal = new boostrap.Modal(document.getElementById)
+    }
+</script>    
+
+{% endblock %}

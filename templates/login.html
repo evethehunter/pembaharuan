@@ -1,0 +1,21 @@
+{%extends "navbar.html" %}
+
+{%block content%}
+    <div class="container border mt-4 justify-content-center">
+        {% if pesan != ''%}
+            <div class="alert alert-danger mt-2" role="alert">
+            <h1> {{pesan}}</h1>
+            </div>
+        {% endif%}
+        <div class="container">
+            <form method="POST">
+                <div class="mt-1">
+                        <h1 class="text-center">Login</h1>
+                        <input type="text" placeholder="Username" class="form-control" name="username" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        <input type="password" class="form-control mt-3" name="password" placeholder="Your Password" id="exampleInputPassword1">
+                        <button type="submit" class="btn btn-success mb-3 mt-3">Submit</button>
+                </div>
+            </form>
+        </div>
+   </div>
+{%endblock%}

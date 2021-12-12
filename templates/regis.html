@@ -1,0 +1,16 @@
+{% extends ('navbar.html') %}
+{% block content%}
+
+   <div class="container border mt-4 justify-content-center">
+    <h1>{{pesan}}</h1>
+    <form method="POST" action="/regis">
+        <div class="mt-1">
+                <h1 class="text-center">Register</h1>
+                <input type="text" placeholder="Username" class="form-control" name="nama" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <input type="text" placeholder="Nilai" class="form-control mt-3" name="nilai" id="exampleInputEmail1" aria-describedby="">
+                <input type="password" class="form-control mt-3" name="password" placeholder="Your Password" id="exampleInputPassword1">
+                <button type="submit" class="btn btn-success mb-3 mt-3">Submit</button>
+        </div>
+    </form>
+   </div>
+{%endblock%}
